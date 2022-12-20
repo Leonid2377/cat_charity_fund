@@ -1,6 +1,7 @@
 from pydantic import BaseSettings, EmailStr
 from typing import Optional
 
+
 class Settings(BaseSettings):
     app_title: str = 'Благотворительный фонд поддрержки котов'
     database_url: str = 'sqlite+aiosqlite:///./cats.db'
@@ -10,5 +11,6 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = '.env'
+
 
 settings = Settings()
