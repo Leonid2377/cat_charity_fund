@@ -91,7 +91,7 @@ async def remove_charity_project(
 ):
 
     await check_project_exists(charity_project_id,
-                                       session)
+                               session)
     charity_project = await check_project_before_delete(
         charity_project_id, session)
     charity_project = await charity_project_crud.remove(
