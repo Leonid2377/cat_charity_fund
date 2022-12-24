@@ -1,14 +1,50 @@
-Заполни меня!sd;v'cadsf;madf
-dsfafdasaf
-assdfasdf
+# Приложение QRKot - приложение для Благотворительного фонда поддержки котиков
+Описание проекта:  
+Фонд собирает пожертвования на различные целевые проекты: на медицинское обслуживание нуждающихся хвостатых,
+на обустройство кошачьей колонии в подвале, на корм оставшимся без попечения кошкам — на любые цели, связанные с поддержкой кошачьей популяции.
 
-sdfadsp]f[ma[derf
 
-asdflodsmaf[pmadsf
+**Как пользоватся**:  
+Клонировать репозиторий и перейти в него в командной строке:
 
-omdsf]
-medsf
-masd]mcdsaf
-adsas
+```
+git clone 
+```
 
-as]
+Cоздать и активировать виртуальное окружение:
+
+```
+python3 -m venv venv
+```
+
+* Если у вас Linux/MacOS
+
+    ```
+    source venv/bin/activate
+    ```
+
+* Если у вас windows
+
+    ```
+    source venv/scripts/activate
+    ```
+
+Установить зависимости из файла requirements.txt:
+
+```
+python3 -m pip install --upgrade pip
+```
+
+```
+pip install -r requirements.txt
+```
+
+Запустить миграции
+```
+alembic upgrade head
+```
+
+Запустить проект на локальном сервере http://127.0.0.1:8000
+```
+uvicorn app.main:app --reload
+```
