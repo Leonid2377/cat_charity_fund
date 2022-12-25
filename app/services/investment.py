@@ -37,7 +37,7 @@ async def invest_when_new_project(
     db_model = (
         CharityProject if isinstance(project, Donation) else Donation
     )
-    not_invested_objects = await get_opened_charity_project(db_model, session)
+    not_invested_objects = await get_opened_charity_project(db_model, session)  # noqa
     available_amount = project.full_amount
 
     if not_invested_objects:
