@@ -12,8 +12,7 @@ from app.models import CharityProject
 from app.schemas.charityproject import (CharityProjectCreate,
                                         CharityProjectResponse,
                                         CharityProjectUpdate)
-from app.services.project_investment import (
-    invest_when_new_project, patch_project_with_full_investment)
+from app.services.investment import invest_when_new_project
 
 router = APIRouter()
 
@@ -73,10 +72,6 @@ async def partially_update_charity_project(
         )
     )
 
-    if obj_in.full_amount:
-        await patch_project_with_full_investment(
-            charity_project, session
-        )
     return charity_project
 
 
